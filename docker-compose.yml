@@ -1,0 +1,27 @@
+version: '2'
+services:
+    service-a:
+        build:
+            context: ./service-a
+            dockerfile: Dockerfile
+        env_file:
+            - ./release.env
+        ports:
+            - "8080:80"
+        links:
+            - redis
+            - service-b
+    
+    service-b:
+        build:
+            context: ./service-b
+            dockerfile: Dockerfile
+        env_file:
+            - ./release.env
+        ports:
+            - "80"
+
+    redis:
+        image: redis
+        ports:
+            - "6379"
