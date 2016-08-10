@@ -2,10 +2,10 @@ var os = require('os');
 var request = require('request');
 var morgan = require('morgan');
 
-if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
-    var appInsights = require('applicationinsights').setup().start();
-    appInsights.client.context.tags["ai.application.ver"] = require('./package.json').name
-}
+//Setup automatic diagnostics data collection with ApplicationInsights
+var appInsights = require('applicationinsights').setup().start();
+//Add service name to the context to distinguish diagnostics data from different services
+appInsights.client.context.tags["ai.application.ver"] = require('./package.json').name
 
 var express = require('express');
 var app = express();

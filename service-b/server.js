@@ -5,10 +5,8 @@ var app = express();
 var morgan = require('morgan');
 app.use(require("morgan")("dev"));
 
-if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
-  var appInsights = require('applicationinsights').setup().start();
-  appInsights.client.context.tags["ai.application.ver"] = require('./package.json').name
-}
+var appInsights = require('applicationinsights').setup().start();
+appInsights.client.context.tags["ai.application.ver"] = require('./package.json').name
 
 app.get('/', function (req, res) {
     res.send('Hello from service B running on ' + os.hostname());

@@ -7,11 +7,10 @@ Repo contains sample Azure Container App populating diagnostics data to [Microso
   node.js sample service.
 
 # Configuration
-Provide ```APPINSIGHTS_INSTRUMENTATIONKEY``` in the local.env and release.env
+Set ```APPINSIGHTS_INSTRUMENTATIONKEY``` environment variable before running ```docker-compose up```
 ```
-APPINSIGHTS_INSTRUMENTATIONKEY=488811fc-e1e1-4ba2-9278-f38ce88559c2
+export APPINSIGHTS_INSTRUMENTATIONKEY=488811fc-e1e1-4ba2-9278-f38ce88559c2
 ```
-If no APPINSIGHTS_INSTRUMENTATIONKEY is provided, diagnostics collection will be disabled
 
 # Stariting App locally
 ```

@@ -4,8 +4,8 @@ services:
         build:
             context: ./service-a
             dockerfile: Dockerfile
-        env_file:
-            - ./release.env
+        environment:
+            - APPINSIGHTS_INSTRUMENTATIONKEY=${APPINSIGHTS_INSTRUMENTATIONKEY}
         ports:
             - "8080:80"
         links:
@@ -16,8 +16,8 @@ services:
         build:
             context: ./service-b
             dockerfile: Dockerfile
-        env_file:
-            - ./release.env
+        environment:
+            - APPINSIGHTS_INSTRUMENTATIONKEY=${APPINSIGHTS_INSTRUMENTATIONKEY}
         ports:
             - "80"
 

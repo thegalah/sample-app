@@ -5,8 +5,8 @@ services:
             context: ./service-a
             dockerfile: Dockerfile
         image: service-a:local
-        env_file:
-            - ./local.env
+        environment:
+            - APPINSIGHTS_INSTRUMENTATIONKEY=${APPINSIGHTS_INSTRUMENTATIONKEY}
         ports:
             - "8080:80"
         links:
@@ -18,8 +18,8 @@ services:
             context: ./service-b
             dockerfile: Dockerfile
         image: service-b:local
-        env_file:
-            - ./local.env
+        environment:
+            - APPINSIGHTS_INSTRUMENTATIONKEY=${APPINSIGHTS_INSTRUMENTATIONKEY}
         ports:
             - "80"
 
