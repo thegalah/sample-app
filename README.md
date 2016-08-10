@@ -14,7 +14,7 @@ export APPINSIGHTS_INSTRUMENTATIONKEY=488811fc-e1e1-4ba2-9278-f38ce88559c2
 
 # Stariting App locally
 ```
-docker-compose -f docker-compose.local.yml up --build
+docker-compose up --build
 ```
 
 # Deploying to ACS cluster

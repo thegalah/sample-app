@@ -1,27 +1,17 @@
 version: '2'
 services:
     service-a:
-        build:
-            context: ./service-a
-            dockerfile: Dockerfile
+        build: ./service-a
         environment:
-            - APPINSIGHTS_INSTRUMENTATIONKEY=${APPINSIGHTS_INSTRUMENTATIONKEY}
+            - APPINSIGHTS_INSTRUMENTATIONKEY
         ports:
             - "8080:80"
         links:
-            - redis
             - service-b
     
     service-b:
-        build:
-            context: ./service-b
-            dockerfile: Dockerfile
+        build: ./service-b
         environment:
-            - APPINSIGHTS_INSTRUMENTATIONKEY=${APPINSIGHTS_INSTRUMENTATIONKEY}
+            - APPINSIGHTS_INSTRUMENTATIONKEY
         ports:
             - "80"
-
-    redis:
-        image: redis
-        ports:
-            - "6379"
