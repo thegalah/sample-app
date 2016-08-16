@@ -1,9 +1,11 @@
-version: '2'
+version: "2"
 services:
     service-a:
         build: ./service-a
         environment:
             - APPINSIGHTS_INSTRUMENTATIONKEY
+        labels:
+            com.microsoft.azure.public.port: "80"
         ports:
             - "8080:80"
         links:
@@ -13,5 +15,3 @@ services:
         build: ./service-b
         environment:
             - APPINSIGHTS_INSTRUMENTATIONKEY
-        ports:
-            - "80"

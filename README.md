@@ -4,7 +4,7 @@ Repo contains sample Azure Container App populating diagnostics data to [Microso
 * service-a
   Angular.js sample application with Node.js backend. 
 * service-b
-  node.js sample service.
+  ASP.NET Core sample service.
 
 # Configuration
 Set ```APPINSIGHTS_INSTRUMENTATIONKEY``` environment variable before running ```docker-compose up```
@@ -12,7 +12,7 @@ Set ```APPINSIGHTS_INSTRUMENTATIONKEY``` environment variable before running ```
 export APPINSIGHTS_INSTRUMENTATIONKEY=488811fc-e1e1-4ba2-9278-f38ce88559c2
 ```
 
-# Stariting App locally
+# Running App locally
 ```
 docker-compose up --build
 ```
