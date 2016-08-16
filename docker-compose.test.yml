@@ -7,4 +7,4 @@ services:
         volumes:
             - ./service-a:/src
         working_dir: /src
-        command: ["ls"]
+        command: ["phantomjs", "tests.js"]
