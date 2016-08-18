@@ -7,11 +7,7 @@ namespace ServiceB
     {
         public static void Main(string[] args)
         {
-            var port = Environment.GetEnvironmentVariable("PORT");
-            if (String.IsNullOrEmpty(port))
-            {
-                port = "80";
-            }
+            var port = 80;
             new WebHostBuilder()
                 .UseKestrel()
                 .UseStartup<Startup>()
